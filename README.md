@@ -8,17 +8,17 @@ C++, Python
 ## Inputs
 Three buttons as DigitalIn that can select the current frequency of the signal wave and confirm it, which have "up", "down", and "confirm".
 
-# Display
+## Display
 Create a display on uLCD that can show the selection od the frequency.
 
-# Generate waveform 
+## Generate waveform 
 Use DAC to generate a triangle signal wave of the selected frequency and need to pass the low pass filter.
 
-# Measure
+## Measure
 Use picoscope to measure the output signal wave.
 
-# Sample
+## Sample
 As the signal is generated, save the data points to a ADC matrix and save it.
 
-# Analysis
+## Analysis
 Then plot the data points by Matplotlib and we can see the wave is different when the frequency is high.
