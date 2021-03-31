@@ -29,7 +29,7 @@ int sample = 1000;
 int j, d = 0;
 int g = 0;
 
-float ADCdata[184];
+float ADCdata[1000];
 
 void Confirm_print() {
  uLCD.printf("\nConfirm !\n");
@@ -47,15 +47,15 @@ void Confirm_Freq() {
 void uLCD_print() {
  if (flag == -1) {
  uLCD.cls();
- uLCD.printf("\nThe frequency is : 458 Hz\n");
+ uLCD.printf("\nThe frequency is : 214 Hz\n");
  }
  if (flag == 0) {
  uLCD.cls();
- uLCD.printf("\nThe frequency is : 625 Hz\n");
+ uLCD.printf("\nThe frequency is : 458 Hz\n");
  }
  if (flag == 1) {
  uLCD.cls();
- uLCD.printf("\nThe frequency is : 769 Hz\n");
+ uLCD.printf("\nThe frequency is : 1054 Hz\n");
  }
 }
 
@@ -98,7 +98,7 @@ int main(void)
 
  // and print what the measured voltage should be (assuming VCC = 3.3v)
 
- if ((flag == -1) && c) {
+ if ((flag == 0) && c) {
  j = 0;
  for (float i = 0.0f; i < 0.9; i += 0.02f) {
 
@@ -118,14 +118,14 @@ int main(void)
  }
  }
 
- if ((flag == 0) && c) {
+ if ((flag == -1) && c) {
  j = 0;
- for (float b = 0.0f; b < 0.9; b+= 0.04745f) {
+ for (float b = 0.0f; b < 0.9; b+= 0.003f) {
  aout = b;
  if ((g >=200) && (g <= 201)) ADCdata[j] = Ain;
  j++;
  }
- for (float a = 0.9; a > 0.0f; a -= 0.0052f) {
+ for (float a = 0.9; a > 0.0f; a -= 0.003f) {
  aout = a;
  if ((g >=200) && (g <= 201)) ADCdata[j] = Ain;
  j++;
@@ -141,12 +141,12 @@ int main(void)
 
  if((flag == 1) && c) {
  j = 0;
- for (float b = 0.0f; b < 0.9; b+= 0.22f) {
+ for (float b = 0.0f; b < 0.9; b+= 0.015f) {
  aout = b;
  if ((g >=200) && (g <= 201)) ADCdata[j] = Ain;
  j++;
  }
- for (float a = 0.9; a > 0.0f; a -= 0.02f) {
+ for (float a = 0.9; a > 0.0f; a -= 0.015f) {
  aout = a;
  if ((g >=200) && (g <= 201)) ADCdata[j] = Ain;
  j++;
