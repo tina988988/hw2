@@ -4,7 +4,7 @@ using namespace std::chrono;
 
 
 Timer debounce;
-uLCD_4DGL uLCD(D1, D0, D2);
+uLCD_4DGL uLCD(Dws1, D0, D2);
 
 
 // Initialize a pins to perform analog and digital output functions
