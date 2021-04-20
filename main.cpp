@@ -4,7 +4,7 @@ using namespace std::chrono;
 
 
 Timer debounce;
-uLCD_4DGL uLCD(Dws1, D0, D2);
+uLCD_4DGL uLCD(D1, D0, D2);
 
 
 // Initialize a pins to perform analog and digital output functions
@@ -25,11 +25,11 @@ Thread t;
 
 int flag = 0;
 int c = 0;
-int sample = 1000;
+//int sample = 1000;
 int j, d = 0;
 int g = 0;
 
-float ADCdata[1000];
+float ADCdata[184];
 
 void Confirm_print() {
  uLCD.printf("\nConfirm !\n");
